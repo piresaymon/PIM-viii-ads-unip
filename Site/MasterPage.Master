@@ -1,0 +1,69 @@
+﻿<%@Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Site.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head runat="server">
+    <title>Sistema de Controle de Tarefas</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   
+    <script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+  integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+  crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            
+            <div class="jumbotron" style="text-align:center;background-color:azure">
+            <h2>Controle de Tarefas - PIM VIII</h2>
+            Selecione a opção desejada:
+            <asp:DropDownList ID="ddlMenu" runat="server"  AutoPostBack="true" OnSelectedIndexChanged="ddlMenu_SelectedIndexChanged">
+                <asp:ListItem Value="0" Text="Página Inicial"></asp:ListItem>
+                <asp:ListItem Value="1" Text="Cadastrar Tarefas"></asp:ListItem>
+                <asp:ListItem Value="2" Text="Consultar Tarefas"></asp:ListItem>
+                <asp:ListItem Value="3" Text="Editar Tarefas"></asp:ListItem>
+            </asp:DropDownList>
+            <p>
+                <asp:Label Id="lblMensagem" runat="server" ForeColor="Red"></asp:Label>
+            </p>
+        </div>
+            
+            
+            
+            
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                <p>
+                    <br />
+                </p>
+                <p>
+                </p>
+
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer class="modal-footer" style="text-align:center;background-color:azure;font-weight: bold">Sistema de Controle de Tarefas - PIM VIII - 
+            <asp:Label ID="lblDataAtual" runat="server"></asp:Label>
+        </footer>
+    </form>
+</body>
+</html>
